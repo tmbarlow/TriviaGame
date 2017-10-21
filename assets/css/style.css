@@ -1,6 +1,20 @@
 html, body {
   height: 100%;
   width: 100%;
+
+}
+
+.display-3, #start {
+	font-family: 'Patrick Hand SC', cursive;
+}
+
+#start{
+	font-size: 25px;
+	letter-spacing: 3px;
+}
+
+#subwrapper {
+	font-family: 'Francois One', sans-serif;
 }
 
 .blok1 {
@@ -8,4 +22,18 @@ html, body {
   background-image: url(http://cdn.wonderfulengineering.com/wp-content/uploads/2014/05/city-wallpaper-7.jpg);
   background-position: center center;
   background-size: cover; 
+}
+
+.jumbotron-fluid {
+	background: rgba(201,156,221,0.8);
+	position: fixed;
+	max-width: 650px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0px -1px 30px 0px rgba(0, 2, 0, 0.61);
+}
+
+#end{
+	font-size: 25px;
 }
