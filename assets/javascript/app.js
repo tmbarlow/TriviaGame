@@ -49,7 +49,7 @@ var game = {
 	//sets answers to 0 and starts time to 120
 	correct: 0, 
 	incorrect: 0, 
-	counter: 20, 
+	counter: 15, 
 	//
 	countdown: function(){
 		game.counter--;
@@ -83,11 +83,12 @@ var game = {
 	done: function(){
 		
 		$.each($('input[name="question-0"]:checked'), function(){
-			if ($(this).val()==questions[0].correctAnswers){
+			if($(this).val()==questions[0].correctAnswers){
 				game.correct++;
 			} else {
 				game.incorrect++;
 			}
+			console.log(game.incorrect);
 		});
 		$.each($('input[name="question-1"]:checked'), function(){
 			if($(this).val()==questions[1].correctAnswers){
