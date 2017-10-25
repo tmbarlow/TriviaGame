@@ -14,7 +14,7 @@ $(document).on('click', '#end', function(){
 var questions = [{
 	question: "About how many islands does New York City consist of?", 
 	answers: ["5", "10", "50", "100"],
-	correctAnswers: "50"
+	correctAnswers: 50
 }, {
 	question: "Times Square centers on the intersection of Broadway, 7th Avenue, and _______.", 
 	answers: ["24th Street", "42nd Street", "56th Street", "65th Street"], 
@@ -26,7 +26,7 @@ var questions = [{
 }, {
 	question: "What is the name of the main international airport at New York?", 
 	answers: ["Ronald Reagan Airport", "Thomas Jefferson Airport", "Abraham Lincoln Airport", "John F. Kennedy Airport"], 
-	correctAnswers: "John F. Kennedy"
+	correctAnswers: "John F. Kennedy Airport"
 }, {
 	question: "New York is often referred to as the ...", 
 	answers: ["Big Orange", "Small Cherry", "Big Apple", "Small Grape"],
@@ -37,19 +37,19 @@ var questions = [{
 	correctAnswers: "Empire State"
 }, {
 	question: "What is the red granite obelisk in Central Park of New York called?", 
-	answers: ["Cleopatra's Needle", "Cleopatra's Monument", "Washington Monument", "Washington Needle"],
-	correctAnswers: "Cleopatra's Needle"
+	answers: ["Cleopatra\'s Needle", "Cleopatra's Monument", "Washington Monument", "Washington Needle"],
+	correctAnswers: "Cleopatra\'s Needle"
 }, {
 	question: "How many boroughs is New York made up of?", 
 	answers: ["2", "3", "4", "5"],
-	correctAnswers: "5"
+	correctAnswers: 5
 }];
 
 var game = {
 	//sets answers to 0 and starts time to 120
 	correct: 0, 
 	incorrect: 0, 
-	counter: 15, 
+	counter: 120, 
 	//
 	countdown: function(){
 		game.counter--;
@@ -83,7 +83,10 @@ var game = {
 	done: function(){
 		
 		$.each($('input[name="question-0"]:checked'), function(){
-			if($(this).val()==questions[0].correctAnswers){
+			console.log($(this).val())
+			console.log(questions[0].correctAnswers)
+			if($(this).val() == questions[0].correctAnswers){
+				console.log("hey you got it right")
 				game.correct++;
 			} else {
 				game.incorrect++;
@@ -91,49 +94,69 @@ var game = {
 			console.log(game.incorrect);
 		});
 		$.each($('input[name="question-1"]:checked'), function(){
-			if($(this).val()==questions[1].correctAnswers){
+			console.log($(this).val())
+			console.log(questions[1].correctAnswers)
+			if($(this).val() === questions[1].correctAnswers){
+				console.log("hey you got it right")
 				game.correct++;
 			} else {
 				game.incorrect++;
 			}
 		});
 		$.each($('input[name="question-2"]:checked'), function(){
-			if($(this).val()==questions[2].correctAnswers){
+			console.log($(this).val())
+			console.log(questions[2].correctAnswers)
+			if($(this).val() === questions[2].correctAnswers){
+				console.log("hey you got it right")
 				game.correct++;
 			} else {
 				game.incorrect++;
 			}
 		});
 		$.each($('input[name="question-3"]:checked'), function(){
-			if($(this).val()==questions[3].correctAnswers){
+			console.log($(this).val())
+			console.log(questions[3].correctAnswers)
+			if($(this).val() === questions[3].correctAnswers){
+				console.log("hey you got it right")
 				game.correct++;
 			} else {
 				game.incorrect++;
 			}
 		});
 		$.each($('input[name="question-4"]:checked'), function(){
-			if($(this).val()==questions[4].correctAnswers){
+			console.log($(this).val())
+			console.log(questions[4].correctAnswers)
+			if($(this).val() === questions[4].correctAnswers){
 				game.correct++;
 			} else {
 				game.incorrect++;
 			}
 		});
 		$.each($('input[name="question-5"]:checked'), function(){
-			if($(this).val()==questions[5].correctAnswers){
+			console.log($(this).val())
+			console.log(questions[5].correctAnswers)
+			if($(this).val() === questions[5].correctAnswers){
+				console.log("hey you got it right")
 				game.correct++;
 			} else {
 				game.incorrect++;
 			}
 		});
 		$.each($('input[name="question-6"]:checked'), function(){
-			if($(this).val()==questions[6].correctAnswers){
+			console.log($(this).val())
+			console.log(questions[6].correctAnswers)
+			if($(this).val() === questions[6].correctAnswers){
+				console.log("hey you got it right")
 				game.correct++;
 			} else {
 				game.incorrect++;
 			}
 		});
 		$.each($('input[name="question-7"]:checked'), function(){
-			if($(this).val()==questions[7].correctAnswers){
+			console.log($(this).val())
+			console.log(questions[7].correctAnswers)
+			if($(this).val() == questions[7].correctAnswers){
+				console.log("hey you got it right")
 				game.correct++;
 			} else {
 				game.incorrect++;
@@ -148,7 +171,7 @@ var game = {
 		clearInterval(timer);
 		$('#subwrapper h2').remove();
 		$('#subwrapper').html("<h2>All done!</h2>");
-		$('#subwrapper').append("<h3>Correct Answers: "+this.correct+"</h3>");
+		$('#subwrapper').append("<h3>Correct Answers: "+ this.correct +"</h3>");
 		$('#subwrapper').append("<h3>Incorrect Answers: "+this.incorrect+"</h3>");
 		$('#subwrapper').append("<h3>Unanswered: " +(questions.length-(this.incorrect+this.correct))+"</h3>");
 	}
