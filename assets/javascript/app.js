@@ -73,7 +73,7 @@ var game = {
 	    	$("#subwrapper").append("<h4> "+questions[i].question+" </h4>");
 	    		for (var j = 0; j < questions[i].answers.length; j++) {
 	    			//adding radio buttons so player can only choose one answer
-	    			$("#subwrapper").append("<input type='radio' style='margin-left: 10px;' name='question-"+i+"' value= '"+questions[i].answers[j]+ " '>" +questions[i].answers[j]);
+	    			$("#subwrapper").append("<input type='radio' style='margin-left: 10px;' name='question-"+i+"' data-index='" + j +"' value= '"+questions[i].answers[j]+ " '>" +questions[i].answers[j]);
     		}
 		}
 		//done button to submit answers when done
@@ -83,9 +83,9 @@ var game = {
 	done: function(){
 		
 		$.each($('input[name="question-0"]:checked'), function(){
-			console.log($(this).val())
+			var userPicked = $(this).attr("data-index")
 			console.log(questions[0].correctAnswers)
-			if($(this).val() == questions[0].correctAnswers){
+			if( questions[0].answers[userPicked] == questions[0].answers[2]){
 				console.log("hey you got it right")
 				game.correct++;
 			} else {
@@ -96,7 +96,8 @@ var game = {
 		$.each($('input[name="question-1"]:checked'), function(){
 			console.log($(this).val())
 			console.log(questions[1].correctAnswers)
-			if($(this).val() === questions[1].correctAnswers){
+			var userPicked = $(this).attr("data-index")
+			if(questions[1].answers[userPicked] == questions[1].answers[1]){
 				console.log("hey you got it right")
 				game.correct++;
 			} else {
@@ -106,7 +107,8 @@ var game = {
 		$.each($('input[name="question-2"]:checked'), function(){
 			console.log($(this).val())
 			console.log(questions[2].correctAnswers)
-			if($(this).val() === questions[2].correctAnswers){
+			var userPicked = $(this).attr("data-index")
+			if(questions[2].answers[userPicked] == questions[2].answers[0]){
 				console.log("hey you got it right")
 				game.correct++;
 			} else {
@@ -116,7 +118,8 @@ var game = {
 		$.each($('input[name="question-3"]:checked'), function(){
 			console.log($(this).val())
 			console.log(questions[3].correctAnswers)
-			if($(this).val() === questions[3].correctAnswers){
+			var userPicked = $(this).attr("data-index")
+			if(questions[3].answers[userPicked] == questions[3].answers[3]){
 				console.log("hey you got it right")
 				game.correct++;
 			} else {
@@ -126,7 +129,9 @@ var game = {
 		$.each($('input[name="question-4"]:checked'), function(){
 			console.log($(this).val())
 			console.log(questions[4].correctAnswers)
-			if($(this).val() === questions[4].correctAnswers){
+			var userPicked = $(this).attr("data-index")
+			if(questions[4].answers[userPicked] == questions[4].answers[2]){
+				console.log("hey you got it right")
 				game.correct++;
 			} else {
 				game.incorrect++;
@@ -135,7 +140,8 @@ var game = {
 		$.each($('input[name="question-5"]:checked'), function(){
 			console.log($(this).val())
 			console.log(questions[5].correctAnswers)
-			if($(this).val() === questions[5].correctAnswers){
+			var userPicked = $(this).attr("data-index")
+			if(questions[5].answers[userPicked] == questions[5].answers[1]){
 				console.log("hey you got it right")
 				game.correct++;
 			} else {
@@ -145,7 +151,8 @@ var game = {
 		$.each($('input[name="question-6"]:checked'), function(){
 			console.log($(this).val())
 			console.log(questions[6].correctAnswers)
-			if($(this).val() === questions[6].correctAnswers){
+			var userPicked = $(this).attr("data-index")
+			if(questions[6].answers[userPicked] == questions[6].answers[0]){
 				console.log("hey you got it right")
 				game.correct++;
 			} else {
@@ -155,7 +162,8 @@ var game = {
 		$.each($('input[name="question-7"]:checked'), function(){
 			console.log($(this).val())
 			console.log(questions[7].correctAnswers)
-			if($(this).val() == questions[7].correctAnswers){
+			var userPicked = $(this).attr("data-index")
+			if(questions[7].answers[userPicked] == questions[7].answers[3]){
 				console.log("hey you got it right")
 				game.correct++;
 			} else {
