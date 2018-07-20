@@ -1,8 +1,7 @@
 // start button
 $("#start").on("click", function(){
    //calls the start function and timer begins wonce start button is clicked
-    game.start();
-    		
+   game.start();
 })
 
 $(document).on('click', '#end', function(){
@@ -71,11 +70,11 @@ var game = {
 	    //lists all the questions and multipule choice answers 
 	    for (var i = 0; i < questions.length; i++) {
 	    	$("#subwrapper").append("<h4> "+questions[i].question+" </h4>");
-	    		for (var j = 0; j < questions[i].answers.length; j++) {
+	    	for (var j = 0; j < questions[i].answers.length; j++) {
 	    			//adding radio buttons so player can only choose one answer
 	    			$("#subwrapper").append("<input type='radio' style='margin-left: 10px;' name='question-"+i+"' data-index='" + j +"' value= '"+questions[i].answers[j]+ " '>" +questions[i].answers[j]);
-    		}
-		}
+	    		}
+	    	}
 		//done button to submit answers when done
 		$("#subwrapper").append('<br><br><button id="end">DONE</button>');
 	}, 
@@ -172,9 +171,9 @@ var game = {
 		});
 	//calls result function
 	this.result();			
-	},
+},
 
-	result: function(){
+result: function(){
 		//function desplays incorrect and correct answers
 		clearInterval(timer);
 		$('#subwrapper h2').remove();
